@@ -28,7 +28,7 @@ dependencies {
 
 ## 20.1 默认属性
 
-Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例如，模板引擎
+Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例如，[模板引擎](/27spring-web-mvc-framework.md#27-1-10)
 
 ## 20.5 远程应用
 
