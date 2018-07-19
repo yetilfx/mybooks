@@ -34,7 +34,7 @@ Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例�
 
 缓存选项通常在 `application.properties` 文件中设置。例如，Thymeleaf 提供的 `spring.thymeleaf.cache` 属性。无需手动设置这些属性，`spring-boot-devtools` 模块将自动采用开发时配置。
 
-开发工具自动配置属性的完整清单，参见 DevToolsPropertyDefaultsPostProcessor。
+> 开发工具自动配置属性的完整清单，参见 [DevToolsPropertyDefaultsPostProcessor](https://github.com/spring-projects/spring-boot/tree/v2.0.3.RELEASE/spring-boot-project/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/env/DevToolsPropertyDefaultsPostProcessor.java)。
 
 ## 20.5 远程应用
 
