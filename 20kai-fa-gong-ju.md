@@ -36,6 +36,12 @@ Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例�
 
 > 开发工具自动配置属性的完整清单，参见 [DevToolsPropertyDefaultsPostProcessor](https://github.com/spring-projects/spring-boot/tree/v2.0.3.RELEASE/spring-boot-project/spring-boot-devtools/src/main/java/org/springframework/boot/devtools/env/DevToolsPropertyDefaultsPostProcessor.java)。
 
+## 20.2 自动重启
+
+应用通过 `spring-boot-devtools` 模块，可实现当classpath中任何文件产生变化时自动重启引。这是在使用开发工具工作时，非常用的的一个特性，他能快速的反馈代码变化产生的影响。默认情况下，classpath中所有的文件变化都会被监测到。注意，有些资源的变化，诸如静态文件和视图模板等，是不需要重启应用的，参见 [20.2.2 排除资源](#2022-排除资源)。
+
+### 20.2.2 排除资源
+
 ## 20.5 远程应用
 
 
