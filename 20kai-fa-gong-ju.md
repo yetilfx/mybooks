@@ -49,7 +49,13 @@ Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例�
 在 IntelliJ IDEA中，构建项目（Build -> Build Project）才会导致上述情况。
 ```
 
-
+> 你也可以使用Maven和Gradle的Spring Boot插件来启动用应用，注意插件中“fork”参数需要设置为“启用”，原因是DevTools需要一个独立的应用类加载器（不能多个进程共用）才能运行。默认情况下，Gradle和Maven的Spring Boot插件会检测classpath中是否包含`spring-boot-devtools` 。关于fork的作用，参见下列内容
+>
+> 参见：[Devtools reload doesn't work with spring-boot-maven-plugin](https://github.com/spring-projects/spring-boot/issues/3315)
+>
+> 参见：[Enable forking for \`spring-boot:run\` if devtools is present](https://github.com/spring-projects/spring-boot/issues/5137)
+>
+> 参见：[Spring Boot Maven Plugin - fork 参数](https://docs.spring.io/spring-boot/docs/current/maven-plugin/run-mojo.html#fork)
 
 ### 20.2.2 排除资源
 
