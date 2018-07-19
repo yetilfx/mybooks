@@ -58,10 +58,14 @@ Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例�
 > 参见：[Enable forking for \`spring-boot:run\` if devtools is present](https://github.com/spring-projects/spring-boot/issues/5137)
 >
 > 参见：[Spring Boot Maven Plugin - fork 参数](https://docs.spring.io/spring-boot/docs/current/maven-plugin/run-mojo.html#fork)
-
-
-
+>
 > 自动重启可以与热部署\(LiveReload\)一起良好的运转。详情参见 “[热部署](#203-热部署（livereload）)”。如果使用JReCURL，则禁用自动重启，以支持动态类重载。其他的开发工具特性（例如：热部署和默认属性）仍然有效。
+>
+> DevTools 依赖于应用上下文（Application Context）中的关闭钩子（shutdown hook）实现重启过程中的关闭应用的动作。如光禁用关闭钩子，自动重启将无法正常工作。（`SpringApplication.setRegisterShutdownHook(false)`）
+>
+> 当确定设置classpath中某一项，当其改变时将触发重启，DevTools 会自动忽略名称为`spring-boot`,`spring-boot-devtools`,`spring-boot-autoconfigure`,`spring-boot-actuator`, `spring-boot-starter`的项目。
+>
+> DevTools 需要通过 `ApplicationContext` 来定制 `ResourceLoader` 。如果你的应用中提供了一个，那么它将被封装起来。但直接重载 `ApplicationContext` 中的 `getResource` 方法是不被支持的。
 
 ### 20.2.2 排除资源
 
