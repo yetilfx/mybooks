@@ -59,7 +59,11 @@ Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例�
 >
 > 参见：[Spring Boot Maven Plugin - fork 参数](https://docs.spring.io/spring-boot/docs/current/maven-plugin/run-mojo.html#fork)
 
+自动重启可以与热部署\(LiveReload\)一起良好的运转。详细细节参见 “热部署”
+
 ### 20.2.2 排除资源
+
+## 20.3 热部署（LiveReload）
 
 ## 20.5 远程应用
 
