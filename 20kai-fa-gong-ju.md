@@ -28,7 +28,13 @@ dependencies {
 
 ## 20.1 默认属性
 
-Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例如，[模板引擎](/27spring-web-mvc-framework.md#27-1-10) 缓存编译后的模板，以避免一再重复的解析模板文件。同样，Spring MVC可以针对静态资源添加HTTP缓存头
+Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例如，[模板引擎](/27spring-web-mvc-framework.md#27-1-10) 缓存编译后的模板，以避免一再重复的解析模板文件。同样，Spring MVC可以添加HTTP缓存头来缓存静态资源。
+
+有时，在生产环境中缓存起到了很好的作用，但是在开发中却适得其反。因为缓存的原因，导致你对应用的调整无法立即呈现出来。因此，`spring-boot-devtools` 默认禁用缓存选项。
+
+缓存选项通常在 `application.properties` 文件中设置。例如，Thymeleaf 提供的 `spring.thymeleaf.cache` 属性。无需手动设置这些属性，`spring-boot-devtools` 模块将自动采用开发时配置。
+
+开发工具自动配置属性的完整清单，参见 DevToolsPropertyDefaultsPostProcessor。
 
 ## 20.5 远程应用
 
