@@ -59,7 +59,7 @@ Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例�
 >
 > 参见：[Spring Boot Maven Plugin - fork 参数](https://docs.spring.io/spring-boot/docs/current/maven-plugin/run-mojo.html#fork)
 
-自动重启可以与热部署\(LiveReload\)一起良好的运转。详细细节参见 “热部署”
+> 自动重启可以与热部署\(LiveReload\)一起良好的运转。详情参见 “[热部署](#203-热部署（livereload）)”。如果使用JReCURL，则禁用自动重启，以支持动态类重载。其他的开发工具特性（例如：热部署和默认属性）仍然有效。
 
 ### 20.2.2 排除资源
 
