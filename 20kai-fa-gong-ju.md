@@ -79,6 +79,16 @@ spring.devtools.restart.log-condition-evaluation-delta=false
 
 ### 20.2.2 排除资源
 
+有些资源改变时，不需要触发应用重启。例如：Thymeleaf模板。默认情况下 `/META-INF/maven` ，`/META-INF/resources` ，`/resources` ，`/static` ， `/public` ，或`/templates` 中资源变化不会触发重启，但是会触发[热部署](#203-热部署（livereload）)。如果你需要自定义排除的资源，你可以通过设置 `spring.devtools.restart.exclude` 实现。例如，仅排除 `/static` 和 `/public` 你需要进行如下设置：
+
+```
+spring.devtools.restart.exclude=static/**,public/**
+```
+
+> 如果你希望保留默认的配置的基础上再额外添加一些排除的资源，则需要配置 `spring.devtools.restart.additional-exclude` 属性，来取代`spring.devtools.restart.exclude `属性。
+
+
+
 ### 20.2.3 监视其他路径
 
 ### 20.2.4 禁止重启
