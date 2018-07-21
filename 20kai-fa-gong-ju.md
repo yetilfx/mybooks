@@ -85,11 +85,11 @@ spring.devtools.restart.log-condition-evaluation-delta=false
 spring.devtools.restart.exclude=static/**,public/**
 ```
 
-> 如果你希望保留默认的配置的基础上再额外添加一些排除的资源，则需要配置 `spring.devtools.restart.additional-exclude` 属性，来取代`spring.devtools.restart.exclude `属性。
+> 如果你希望保留默认的配置的基础上再额外添加一些排除的资源，则需要配置 `spring.devtools.restart.additional-exclude` 属性，来取代`spring.devtools.restart.exclude`属性。
 
+### 20.2.3 监视附加路径
 
-
-### 20.2.3 监视其他路径
+当你修改某些不在classpath中的文件时，可能也需要重启应用或重新加载资源。配置 `spring.devtools.restart.additional-paths` 属性可以监控classpath外的其他路径。你也可以使用 `spring.devtools.restart.exclude` 来控制附加路径下的变化，是否触发重启或者热部署。
 
 ### 20.2.4 禁止重启
 
@@ -100,6 +100,12 @@ spring.devtools.restart.exclude=static/**,public/**
 ### 20.2.7 已知局限
 
 ## 20.3 热部署（LiveReload）
+
+`spring-boot-devtools` 模块包含一个内嵌的热部署（LiveReload）服务，它可以在资源变化时自动触发刷新浏览器。在Chrome，Firefox和Safari浏览器上均有免费的LiveReload浏览器扩展。参见，[livereload.com](https://livereload.com/extensions/)。
+
+如果你不希望使用热部署服务来启动并运行你的应用，你可以设置 `spring.devtools.livereload.enabled` 为 `false` 。
+
+在同一时间，你仅能运行一个热部署服务。再启动你的应用前，请确认没有其他的热部署服务正在运行。如果从你的IDE启动了多个应用，则仅有第一个支持热部署。
 
 ## 20.4 全局配置
 
