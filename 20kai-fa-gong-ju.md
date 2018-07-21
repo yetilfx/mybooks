@@ -121,9 +121,35 @@ spring.devtools.restart.exclude=static/**,public/**
 
 ### 20.5.1 运行远程客户端应用
 
+远程客户端应用程序被设计为从IDE中运行。需要运行 `org.springframework.boot.devtools.RemoteSpringApplication` 并与你连接的远程项目在同一classpath中。这个应用的唯一参数就是他连接的远程URL。
+
+例如，如果你使用Eclipse或者STS开发一个名为 my-app 的项目，并部署在Cloud Foundry上，你需要做下列几件事：
+
+* 从 `Run` 菜单中选择 `Run Configurations` 
+* 创建一个新 `Java Application` "运行配置"
+* 浏览`my-app` 项目
+* 使用 org.springframework.boot.devtools.RemoteSpringApplication最为 main class
+* 添加 `https://myapp.cfapps.io (你的远程URL)`到程序参数\(`Program arguments`\)
+
+远程客户端运行时会有类似如下的输出：
+
+      .   ____          _                                              __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _          ___               _      \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` |        | _ \___ _ __  ___| |_ ___ \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| []::::::[]   / -_) '  \/ _ \  _/ -_) ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, |        |_|_\___|_|_|_\___/\__\___|/ / / /
+     =========|_|==============|___/===================================/_/_/_/
+     :: Spring Boot Remote :: 2.0.3.RELEASE
+
+    2015-06-10 18:25:06.632  INFO 14938 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Starting RemoteSpringApplication on pwmbp with PID 14938 (/Users/pwebb/projects/spring-boot/code/spring-boot-devtools/target/classes started by pwebb in /Users/pwebb/projects/spring-boot/code/spring-boot-samples/spring-boot-sample-devtools)
+    2015-06-10 18:25:06.671  INFO 14938 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@2a17b7b6: startup date [Wed Jun 10 18:25:06 PDT 2015]; root of context hierarchy
+    2015-06-10 18:25:07.043  WARN 14938 --- [           main] o.s.b.d.r.c.RemoteClientConfiguration    : The connection to http://localhost:8080 is insecure. You should use a URL starting with 'https://'.
+    2015-06-10 18:25:07.074  INFO 14938 --- [           main] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+    2015-06-10 18:25:07.130  INFO 14938 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Started RemoteSpringApplication in 0.74 seconds (JVM running for 1.105)
+
+
+
 ### 20.5.2 远程更新
 
 同本地重启方案一样，远程客户端监测你应用classpath中的变化。任何资源的更新会被推到远程的应用并按需触发重启。
-
-
 
