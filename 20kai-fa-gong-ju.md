@@ -91,7 +91,13 @@ spring.devtools.restart.log-condition-evaluation-delta=false
 
 ## 20.3 热部署（LiveReload）
 
+## 20.4 全局配置
+
 ## 20.5 远程应用
+
+### 20.5.1 运行远程客户端应用
+
+### 20.5.2 远程更新
 
 
 
