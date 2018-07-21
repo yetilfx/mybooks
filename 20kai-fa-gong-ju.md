@@ -123,5 +123,7 @@ spring.devtools.restart.exclude=static/**,public/**
 
 ### 20.5.2 远程更新
 
+同本地重启方案一样，远程客户端监测你应用classpath中的变化。任何资源的更新会被推到远程的应用并按需触发重启。
+
 
 
