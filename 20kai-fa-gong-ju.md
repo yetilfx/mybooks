@@ -61,13 +61,33 @@ Spring Boot 支持的一些类库中，通过使用缓存来提升性能。例�
 >
 > 自动重启可以与热部署\(LiveReload\)一起良好的运转。详情参见 “[热部署](#203-热部署（livereload）)”。如果使用JRebel，则禁用自动重启，以支持动态类重载。其他的开发工具特性（例如：热部署和默认属性）仍然有效。
 >
-> DevTools 依赖于应用上下文（Application Context）中的关闭钩子（shutdown hook）实现重启过程中的关闭应用的动作。如光禁用关闭钩子，自动重启将无法正常工作。（`SpringApplication.setRegisterShutdownHook(false)`）
+> DevTools 依赖于应用上下文（Application Context）中的关闭钩子（shutdown hook）实现重启过程中的关闭应用的动作。如果禁用关闭钩子，自动重启将无法正常工作。（`SpringApplication.setRegisterShutdownHook(false)`）
 >
 > 当确定设置classpath中某一项，当其改变时将触发重启，DevTools 会自动忽略名称为`spring-boot`,`spring-boot-devtools`,`spring-boot-autoconfigure`,`spring-boot-actuator`, `spring-boot-starter`的项目。
 >
 > DevTools 需要通过 `ApplicationContext` 来定制 `ResourceLoader` 。如果你的应用中提供了一个，那么它将被封装起来。但直接重载 `ApplicationContext` 中的 `getResource` 方法是不被支持的。
 
+### 20.2.1 记录状态变化
+
+默认情况下，每次应用重启，都会给出**增量**的状态状态变化报告。这个报告反应了，当你添加或移除 bean或修改配置属性等这些变更，导致的应用自动配置的变更。
+
+可通过如下设置，关闭这一报告：
+
+```
+spring.devtools.restart.log-condition-evaluation-delta=false
+```
+
 ### 20.2.2 排除资源
+
+### 20.2.3 监视其他路径
+
+### 20.2.4 禁止重启
+
+### 20.2.5 使用触发文件
+
+### 20.2.6 定制重启类加载器（Classloader）
+
+### 20.2.7 已知局限
 
 ## 20.3 热部署（LiveReload）
 
