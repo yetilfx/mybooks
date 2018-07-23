@@ -128,7 +128,7 @@ spring.devtools.restart.exclude=static/**,public/**
 * 从 `Run` 菜单中选择 `Run Configurations` 
 * 创建一个新 `Java Application` "运行配置"
 * 浏览`my-app` 项目
-* 使用 org.springframework.boot.devtools.RemoteSpringApplication最为 main class
+* 使用 org.springframework.boot.devtools.RemoteSpringApplication做为 main class
 * 添加 `https://myapp.cfapps.io (你的远程URL)`到程序参数\(`Program arguments`\)
 
 远程客户端运行时会有类似如下的输出：
@@ -146,8 +146,6 @@ spring.devtools.restart.exclude=static/**,public/**
     2015-06-10 18:25:07.043  WARN 14938 --- [           main] o.s.b.d.r.c.RemoteClientConfiguration    : The connection to http://localhost:8080 is insecure. You should use a URL starting with 'https://'.
     2015-06-10 18:25:07.074  INFO 14938 --- [           main] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
     2015-06-10 18:25:07.130  INFO 14938 --- [           main] o.s.b.devtools.RemoteSpringApplication   : Started RemoteSpringApplication in 0.74 seconds (JVM running for 1.105)
-
-
 
 ### 20.5.2 远程更新
 
