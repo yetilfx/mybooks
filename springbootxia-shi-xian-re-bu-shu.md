@@ -50,3 +50,11 @@ Maven 3.3.9
 
 ![](/assets/automakerunning.png)
 
+5.重启IDEA
+
+6.下载
+
+ref
+
+https://www.jianshu.com/p/ac4c00a63750
+
