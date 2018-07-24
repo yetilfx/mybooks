@@ -44,3 +44,9 @@ Maven 3.3.9
 
 在 Intellij IDEA 当中的`Preference`-&gt;`Build, Execution, Deployment`-&gt;`Compiler`中勾选`Build project automatically` \(HotKey : command + ,\)![](/assets/autobuild.png)4.开启IDEA运行时自动构建
 
+在 IDEA 的 registry 中勾选`compiler.automake.allow.when.app.running`（HotKey：option + command + shift + /）
+
+![](/assets/registry.png)
+
+![](/assets/automakerunning.png)
+
