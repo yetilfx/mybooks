@@ -52,7 +52,9 @@ Maven 3.3.9
 
 5.重启IDEA
 
-6.下载
+6.下载livereload 浏览器扩展
+
+http://livereload.com/extensions/
 
 ref
 
